@@ -1,0 +1,3 @@
+replicas: 2
+image: apache/shenyu-admin:2.4.2
+label: shenyu-admin

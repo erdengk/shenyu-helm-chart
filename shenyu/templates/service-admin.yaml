@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: shenyu1
+  name: shenyu-admin
+spec:
+  type: NodePort
+  ports:
+  - port: 9095
+    protocol: TCP
+    targetPort: 9095
+    nodePort: 31095
+  selector:
+    app: shenyu1

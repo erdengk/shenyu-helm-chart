@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: shenyu1
+  name: shenyu1 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shenyu1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: shenyu1
+    spec:
+      containers:
+      - name: shenyu-admin
+        image: apache/shenyu-admin:2.4.2
+        resources: {}
+      - name: shenyu-bootstrap
+        image: apache/shenyu-bootstrap:2.4.2
+        resources: {}
+status: {}

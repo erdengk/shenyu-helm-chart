@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: shenyu1
+  name: shenyu-bootstrap
+spec:
+  type: NodePort
+  ports:
+  - port: 9195
+    protocol: TCP
+    targetPort: 9195
+    nodePort: 31195
+  selector:
+    app: shenyu1
+status:
+  loadBalancer: {}
