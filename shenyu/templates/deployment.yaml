@@ -3,25 +3,26 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: shenyu1
-  name: shenyu1 
+    name: {{ .Release.Name }}
+    app: {{ .Chart.Name }}-{{ .Release.Name}}
+  name: {{ .Release.Name}} 
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicas}}
   selector:
     matchLabels:
-      app: shenyu1
+      app: {{ .Values.label}}
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: shenyu1
+        app: {{ .Values.label}}
     spec:
       containers:
       - name: shenyu-admin
-        image: apache/shenyu-admin:2.4.2
+        image: {{ .Values.adminImage}}:{{ default "2.4.2" .Values.adminTag}}
         resources: {}
       - name: shenyu-bootstrap
-        image: apache/shenyu-bootstrap:2.4.2
+        image: {{ .Values.bootstrapImage}}:{{ default "2.4.2" .Values.bootstrapTag}}
         resources: {}
 status: {}

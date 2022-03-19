@@ -3,7 +3,7 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: shenyu1
+    app: {{ .Release.Name}}
   name: shenyu-bootstrap
 spec:
   type: NodePort
@@ -13,6 +13,6 @@ spec:
     targetPort: 9195
     nodePort: 31195
   selector:
-    app: shenyu1
+    app: {{ .Release.Name}}
 status:
   loadBalancer: {}

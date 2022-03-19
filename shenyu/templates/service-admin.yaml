@@ -3,7 +3,7 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: shenyu1
+    app: {{ .Release.Name}}
   name: shenyu-admin
 spec:
   type: NodePort
@@ -13,4 +13,5 @@ spec:
     targetPort: 9095
     nodePort: 31095
   selector:
-    app: shenyu1
+    app: {{ .Release.Name}}
+
