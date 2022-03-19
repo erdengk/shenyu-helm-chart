@@ -3,9 +3,13 @@ adminVersion: 2.4.2
 bootstrapVersion: 2.4.2 
 label: shenyu
 
-adminImage: apache/shenyu-admin
-adminTag: 2.4.2
+admin:
+  enabled: true
+  image: apache/shenyu-admin
+  tag: 2.4.2
 
-bootstrapImage: apache/shenyu-bootstrap
-bootstrapTag: 2.4.2
+bootstrap:
+  enabled: false
+  image: apache/shenyu-bootstrap
+  tag: 2.4.2
 

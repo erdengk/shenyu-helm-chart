@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: shenyu-cm
-  namespace: shenyu
+  namespace: default
 data:
   application-local.yml: |
     server:
