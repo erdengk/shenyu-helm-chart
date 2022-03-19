@@ -14,4 +14,3 @@ spec:
     nodePort: 31095
   selector:
     app: {{ .Release.Name}}
-

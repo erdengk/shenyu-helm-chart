@@ -1,4 +1,4 @@
-replicas: 2
+replicas: 1
 adminVersion: 2.4.2
 bootstrapVersion: 2.4.2 
 label: shenyu
@@ -9,7 +9,7 @@ admin:
   tag: 2.4.2
 
 bootstrap:
-  enabled: false
+  enabled: true
   image: apache/shenyu-bootstrap
   tag: 2.4.2
 

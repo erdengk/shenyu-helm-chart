@@ -1,4 +1,4 @@
-{{ if (and .Values.bootstrap.enabled .Values.admin.enabled) }}
+{{ if .Values.bootstrap.enabled }}
 apiVersion: v1
 kind: Service
 metadata:
