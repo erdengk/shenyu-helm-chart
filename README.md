@@ -3,7 +3,7 @@ Helm deployment documentation written for Apache/Shenyu
 
 # About
 
-:tada:
+[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/shenyu-test)](https://artifacthub.io/packages/search?repo=shenyu-test)
 
 
 ## Usage
