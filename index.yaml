@@ -9,6 +9,6 @@ entries:
     name: shenyu
     type: application
     urls:
-    - https://github.com/erdengk/shenyu-helm-chart/blob/main/shenyu-0.1.0.tgz
+    - ./shenyu-0.1.0.tgz
     version: 0.1.0
 generated: "2022-03-20T22:10:01.506075+08:00"
