@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  shenyu:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-20T22:10:01.506417+08:00"
+    description: A Helm chart for Kubernetes
+    digest: 4d58bb4bd86e07d29db23f22e9d0a86c8f183fa6c4d567d3ad269c28d5fc9924
+    name: shenyu
+    type: application
+    urls:
+    - ./shenyu-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-03-20T22:10:01.506075+08:00"
