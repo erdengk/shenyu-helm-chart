@@ -1,7 +1,7 @@
 # shenyu-helm-chart
 Helm deployment documentation written for Apache/Shenyu
 
-# About
+# Artifact Hub
 
 [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/shenyu-test)](https://artifacthub.io/packages/search?repo=shenyu-test)
 
@@ -13,16 +13,14 @@ Helm's [documentation](https://helm.sh/docs) to get started.
 
 Once Helm has been set up correctly, add the repo as follows:
 
-helm repo add shenyu https://erdengk.github.io/shenyu-helm-chart
+add repo
 
-If you had already added this repo earlier, run `helm repo update` to retrieve
-the latest versions of the packages.  You can then run `helm search repo
-<alias>` to see the charts.
+> helm repo add shenyu https://erdengk.github.io/shenyu-helm-chart
 
-To install the <chart-name> chart:
+install:
 
-    helm install my-<chart-name> shenyu/shenyu
+> helm install my-shenyu shenyu-test/shenyu --version 0.1.0
 
-To uninstall the chart:
 
-    helm delete my-<chart-name>
+
+have fun～

@@ -1,0 +1,19 @@
+apiVersion: v1
+entries:
+  Shenyu:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-22T00:47:06.301025+08:00"
+    description: Apache/Shenyu helm chart
+    digest: 5a36c950329fc922e0b9402da401cf0c636b3690b4b68aefec2c5ff03857a64d
+    home: https://shenyu.apache.org/
+    icon: https://shenyu.apache.org/img/logo.png
+    maintainers:
+    - email: wannengdek@gmail.com
+      name: Dang Kai
+    name: Shenyu
+    type: application
+    urls:
+    - shenyu-2.4.2.tgz
+    version: 2.4.2
+generated: "2022-03-22T00:47:06.30034+08:00"

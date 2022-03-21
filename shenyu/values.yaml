@@ -1,8 +1,7 @@
 replicas: 1
-adminVersion: 2.4.2
-bootstrapVersion: 2.4.2 
-label: shenyu
 
+label: shenyu
+version: 2.4.2  #shenyu-version
 admin:
   enabled: true
   image: apache/shenyu-admin
