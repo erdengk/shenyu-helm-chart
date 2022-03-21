@@ -30,7 +30,7 @@ jobs:
               quay.io/helmpack/chart-testing:v3.4.0 sh -c 'helm dependency update \
                && cd ../.. \
                && helm repo add shenyu https://erdengk.github.io/shenyu-helm-chart \
-               && ct lint --charts  shenyu/shenyu '
+               && ct lint --charts  shenyu/shenyu/charts '
 
       - name: fix permissions
         run: |
