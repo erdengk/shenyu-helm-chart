@@ -1,6 +1,11 @@
 apiVersion: v2
-name: shenyu
-description: A Helm chart for Kubernetes
-type: application
-version: 0.1.0
+version: 2.4.2
 appVersion: "1.16.0"
+name: Shenyu
+type: application
+description: A Helm chart for Apache/Shenyu
+home: https://shenyu.apache.org/
+icon: https://shenyu.apache.org/img/logo.png
+maintainers:
+- email: wannengdek@gmail.com
+  name: Dang Kai
