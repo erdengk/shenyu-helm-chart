@@ -29,9 +29,8 @@ jobs:
               --workdir /workdir/charts/shenyu \
               quay.io/helmpack/chart-testing:v3.4.0 sh -c 'helm dependency update \
                && cd ../.. \
-               && helm repo add shenyu https://erdengk.github.io/shenyu-helm-chart/ \
-               && ct lint \
-                  --charts shenyu/shenyu \ '
+               && helm repo add shenyu https://erdengk.github.io/shenyu-helm-chart \
+               && ct lint --charts  shenyu/shenyu '
 
       - name: fix permissions
         run: |
@@ -43,7 +42,7 @@ jobs:
         uses: ./.github/actions/setup-kind
         with:
           version: v0.11.0
-          config: test/e2e/kind.yaml
+          config: test/kind.yaml
           image: kindest/node:${{ matrix.k8s }}
 
       - name: Test
