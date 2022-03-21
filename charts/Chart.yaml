@@ -1,7 +1,7 @@
 apiVersion: v2
 version: 2.4.2
 appVersion: "1.16.0"
-name: Shenyu
+name: shenyu
 type: application
 description: A Helm chart for Apache/Shenyu
 home: https://shenyu.apache.org/
