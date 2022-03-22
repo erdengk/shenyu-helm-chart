@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - "*"
+
+  push:
+
+jobs:
+
+  helm:
+    name: Helm chart
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        k8s: [v1.22.2]
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Lint
+        run: |
+          docker run --rm --interactive --network host \
+              --name ct-lint \
+              --volume $PWD:/workdir \
+              --workdir /workdir/charts/shenyu \
+              quay.io/helmpack/chart-testing:v3.4.0 sh -c 'helm dependency update \
+               && cd ../.. \
+               && helm repo add shenyu https://erdengk.github.io/shenyu-helm-chart \
+               && ct lint \
+                  --charts charts/shenyu '
+
+      - name: fix permissions
+        run: |
+          sudo mkdir -p $HOME/.kube
+          sudo chmod -R 777 $HOME/.kube
+
+      - name: Create Kubernetes ${{ matrix.k8s }} cluster
+        id: kind
+        uses: ./.github/actions/setup-kind
+        with:
+          version: v0.11.0
+          config: test/kind.yaml
+          image: kindest/node:${{ matrix.k8s }}
+
+      - name: Test
+        env:
+          KIND_CLUSTER_NAME: kind
+          SKIP_CLUSTER_CREATION: true
+        run: |
+          kind get kubeconfig > $HOME/.kube/kind-config-kind
+          docker run --rm --interactive --network host \
+              --name ct \
+              --volume $HOME/.kube/kind-config-kind:/root/.kube/config \
+              --volume $PWD:/workdir \
+              --workdir /workdir/charts/shenyu \
+              quay.io/helmpack/chart-testing:v3.4.0 sh -c 'helm dependency update \
+               && cd ../.. \
+               && helm repo add shenyu https://erdengk.github.io/shenyu-helm-chart \
+               && ct install \
+                  --charts charts/shenyu'
