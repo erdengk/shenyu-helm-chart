@@ -44,7 +44,7 @@ jobs:
 
       - name: Add dependency chart repos
         run: |
-          helm repo add bitnami https://charts.bitnami.com/bitnami
+          helm repo add shenyu https://erdengk.github.io/shenyu-helm-chart/
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.1.0
