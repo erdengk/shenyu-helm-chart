@@ -1,4 +1,4 @@
-name: CI
+name: Lint and Test Charts
 
 on:
   pull_request:
@@ -8,59 +8,45 @@ on:
   push:
 
 jobs:
-
-  helm:
-    name: Helm chart
+  lint-test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        k8s: [v1.22.2]
-
     steps:
-
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          submodules: recursive
+          fetch-depth: 0
 
-      - name: Lint
-        run: |
-          docker run --rm --interactive --network host \
-              --name ct-lint \
-              --volume $PWD:/workdir \
-              --workdir /workdir/charts/shenyu \
-              quay.io/helmpack/chart-testing:v3.4.0 sh -c 'helm dependency update \
-               && cd ../.. \
-               && helm repo add shenyu https://erdengk.github.io/shenyu-helm-chart \
-               && ct lint \
-                  --charts charts/shenyu '
-
-      - name: fix permissions
-        run: |
-          sudo mkdir -p $HOME/.kube
-          sudo chmod -R 777 $HOME/.kube
-
-      - name: Create Kubernetes ${{ matrix.k8s }} cluster
-        id: kind
-        uses: ./.github/actions/setup-kind
+      - name: Set up Helm
+        uses: azure/setup-helm@v1
         with:
-          version: v0.11.0
-          config: test/kind.yaml
-          image: kindest/node:${{ matrix.k8s }}
+          version: v3.4.1
 
-      - name: Test
-        env:
-          KIND_CLUSTER_NAME: kind
-          SKIP_CLUSTER_CREATION: true
+      # Python is required because `ct lint` runs Yamale (https://github.com/23andMe/Yamale) and
+      # yamllint (https://github.com/adrienverge/yamllint) which require Python
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+
+      - name: Set up chart-testing
+        uses: helm/chart-testing-action@v2.0.1
+        with:
+          version: v3.3.0
+
+      - name: Run chart-testing (list-changed)
+        id: list-changed
         run: |
-          kind get kubeconfig > $HOME/.kube/kind-config-kind
-          docker run  --interactive --network host \
-              --name ct \
-              --volume $HOME/.kube/kind-config-kind:/root/.kube/config \
-              --volume $PWD:/workdir \
-              --workdir /workdir/charts/shenyu \
-              quay.io/helmpack/chart-testing:v3.4.0 sh -c 'helm dependency update \
-               && cd ../.. \
-               && helm repo add shenyu https://erdengk.github.io/shenyu-helm-chart \
-               && ct install \
-                  --charts charts/shenyu'
+          changed=$(ct list-changed --config ct.yaml)
+          if [[ -n "$changed" ]]; then
+            echo "::set-output name=changed::true"
+          fi
+
+      - name: Run chart-testing (lint)
+        run: ct lint --config ct.yaml
+
+      - name: Create kind cluster
+        uses: helm/kind-action@v1.1.0
+        if: steps.list-changed.outputs.changed == 'true'
+
+      - name: Run chart-testing (install)
+        run: ct install --config ct.yaml
