@@ -3,18 +3,18 @@ entries:
   shenyu:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-03-23T13:35:03.997775+08:00"
-    description: A Helm chart for shenyu-test-release
-    digest: 40c9735e5d617c5b9eb093cb3bc27f2395f99b08623b5fcb204e2886124a6d60
+    created: "2022-03-23T05:28:52.50087779Z"
+    description: A Helm chart for Kubernetes
+    digest: a140d5186e4fafa433819128d14565c25982ebee0c5d0494f2f56a9bfe237b2d
     name: shenyu
     type: application
     urls:
-    - shenyu-2.4.21.tgz
+    - https://github.com/erdengk/shenyu-helm-chart/releases/download/shenyu-2.4.21/shenyu-2.4.21.tgz
     version: 2.4.21
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-03-23T13:35:03.997501+08:00"
-    description: A Helm chart for Kubernetes
+    created: "2022-03-22T16:44:25.701283+08:00"
+    description: A Helm chart for shenyu2.4
     digest: adfc6a71c7b73d6f784827473c4fd2479a9a44ae403047c7c28e22f122181798
     name: shenyu
     type: application
@@ -23,12 +23,12 @@ entries:
     version: 2.4.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-03-23T13:35:03.997098+08:00"
-    description: A Helm chart for Kubernetes
+    created: "2022-03-22T16:44:25.701824+08:00"
+    description: A Helm chart for shenyu1.0
     digest: d559c80eeaeca6f49fe2c611887dc5434aad805cd41882027246a2fb54d71692
     name: shenyu
     type: application
     urls:
     - shenyu-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-23T13:35:03.996527+08:00"
+generated: "2022-03-22T16:44:25.700645+08:00"
