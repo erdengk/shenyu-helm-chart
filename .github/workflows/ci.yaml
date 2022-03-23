@@ -32,6 +32,7 @@ jobs:
                && cd ../.. \
                && helm repo add shenyu https://erdengk.github.io/shenyu-helm-chart \
                && ct lint \
+                  --charts charts/shenyu '
 
       - name: fix permissions
         run: |
