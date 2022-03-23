@@ -3,7 +3,17 @@ entries:
   shenyu:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-03-23T20:35:46.274747+08:00"
+    created: "2022-03-23T21:29:42.530235+08:00"
+    description: A Helm chart for Kubernetes
+    digest: 05ce9b5f38132365029ee9507c9b6fecc02a8174f5b58a74768a00cb165a7760
+    name: shenyu
+    type: application
+    urls:
+    - shenyu-2.4.24.tgz
+    version: 2.4.24
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-23T21:29:42.529999+08:00"
     description: A Helm chart for Kubernetes
     digest: 8918929e8a63f94fb53ed3a69f8e0c4caabf130a58fb48c6c30166afa93e65c0
     name: shenyu
@@ -13,7 +23,7 @@ entries:
     version: 2.4.23
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-03-23T20:35:46.274528+08:00"
+    created: "2022-03-23T21:29:42.529746+08:00"
     description: A Helm chart for Kubernetes
     digest: 85c5275229529bbb6b0e49c3bf6890baca5769402b9272865a389afb83461dd6
     name: shenyu
@@ -23,7 +33,7 @@ entries:
     version: 2.4.22
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-03-23T20:35:46.274054+08:00"
+    created: "2022-03-23T21:29:42.529459+08:00"
     description: A Helm chart for Kubernetes
     digest: ebd47c9b007b89c08cc9fd161545c5153eda9a15977d32a596bfa40f562c49d9
     name: shenyu
@@ -33,7 +43,7 @@ entries:
     version: 2.4.21
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-03-23T20:35:46.2737+08:00"
+    created: "2022-03-23T21:29:42.529216+08:00"
     description: A Helm chart for Kubernetes
     digest: adfc6a71c7b73d6f784827473c4fd2479a9a44ae403047c7c28e22f122181798
     name: shenyu
@@ -43,7 +53,7 @@ entries:
     version: 2.4.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-03-23T20:35:46.273334+08:00"
+    created: "2022-03-23T21:29:42.528681+08:00"
     description: A Helm chart for Kubernetes
     digest: d559c80eeaeca6f49fe2c611887dc5434aad805cd41882027246a2fb54d71692
     name: shenyu
@@ -51,4 +61,4 @@ entries:
     urls:
     - shenyu-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-23T20:35:46.27281+08:00"
+generated: "2022-03-23T21:29:42.528346+08:00"
