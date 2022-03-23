@@ -13,7 +13,6 @@ jobs:
     strategy:
       matrix:
         node_image_version:
-          - v1.21.1 # default used by helm/kind-action@v1.2.0 (kubernetes-sigs/kind@0.11.1)
           - v1.22.4
     name: lint-test (k8s ${{ matrix.node_image_version }})
     steps:
@@ -45,7 +44,7 @@ jobs:
           fi
 
       - name: Run chart-testing (lint)
-        run: ct lint
+        run: ct lint --config ct.yaml
 
       - name: Create kind cluster
         uses: helm/kind-action@v1.2.0
