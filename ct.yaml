@@ -1,9 +1,7 @@
 # See https://github.com/helm/chart-testing#configuration
 remote: origin
 target-branch: gh-pages
-debug: true
 chart-dirs:
-  - charts
   - charts/shenyu
 chart-repos:
   - shenyu=https://erdengk.github.io/shenyu-helm-chart
