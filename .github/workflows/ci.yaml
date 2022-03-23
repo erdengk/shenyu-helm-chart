@@ -13,16 +13,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          args: .github/lint-scripts.sh
+
 
   check-for-chart-changes:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Fetch history
-        run: git fetch --prune --unshallow
       - name: Check for chart changes
         run: .github/check-for-chart-changes.sh
 
