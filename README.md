@@ -37,7 +37,9 @@ have fun～
 3. 生成index
 4. 提交到gh-pages
 
-
+:sparkles: [pr](https://github.com/erdengk/shenyu-helm-chart/commit/1e1609602eda91a72c899ad50c0ab863b0a5a895)
+实现了ci 与 发版
+但还没有验证是否能够识别出错误的chart
 
 
 
