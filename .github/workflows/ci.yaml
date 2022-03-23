@@ -14,15 +14,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-
-  check-for-chart-changes:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Check for chart changes
-        run: .github/check-for-chart-changes.sh
-
   lint-chart:
     runs-on: ubuntu-latest
     needs: check-for-chart-changes
