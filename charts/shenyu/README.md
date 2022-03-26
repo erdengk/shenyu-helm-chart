@@ -1,4 +1,4 @@
-# shenyu-helm-chart
+# shenyu-helm-chart-test
 Helm deployment documentation written for Apache/Shenyu
 
 # Artifact Hub
@@ -6,7 +6,7 @@ Helm deployment documentation written for Apache/Shenyu
 [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/shenyu-test)](https://artifacthub.io/packages/search?repo=shenyu-test)
 
 
-## Usage
+## Usage-test
 
 [Helm](https://helm.sh) must be installed to use the charts.  Please refer to
 Helm's [documentation](https://helm.sh/docs) to get started.

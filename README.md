@@ -27,10 +27,7 @@ have fun～
 
 ## Timeline
 
-2022-03-22 17:08:55
-
 :sparkles: [pr](https://github.com/erdengk/shenyu-helm-chart/commit/53f210ebe103a942a70c902dd68dadb0ea89343e) 实现了CI和自动发版
 
 :sparkles: [pr](https://github.com/erdengk/shenyu-helm-chart/tree/062d312ac23fc297e2881e045d03532a8897ae0b) 验证了发版流程
-
 

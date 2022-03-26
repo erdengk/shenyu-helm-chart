@@ -16,7 +16,6 @@ jobs:
         run: |
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
-
       - name: Install Helm
         uses: azure/setup-helm@v1
         with:
@@ -27,13 +26,10 @@ jobs:
         run: |
           gpg_dir=.cr-gpg
           mkdir "$gpg_dir"
-
           keyring="$gpg_dir/secring.gpg"
           base64 -d <<< "$GPG_KEYRING_BASE64" > "$keyring"
-
           passphrase_file="$gpg_dir/passphrase"
           echo "$GPG_PASSPHRASE" > "$passphrase_file"
-
           echo "CR_PASSPHRASE_FILE=$passphrase_file" >> "$GITHUB_ENV"
           echo "CR_KEYRING=$keyring" >> "$GITHUB_ENV"
         env:
@@ -43,7 +39,6 @@ jobs:
       - name: Add dependency chart repos
         run: |
           helm repo add shenyu https://erdengk.github.io/shenyu-helm-chart/
-
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.1.0
         with:
