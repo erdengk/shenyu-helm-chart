@@ -39,6 +39,9 @@ helm package ../charts/shenyu
 
 helm repo index  --merge index.yaml .
 
+git push 
+
+merge into main
 
 :sparkles: [pr](https://github.com/erdengk/shenyu-helm-chart/commit/1e1609602eda91a72c899ad50c0ab863b0a5a895)
 
