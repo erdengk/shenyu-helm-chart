@@ -27,19 +27,25 @@ have fun～
 
 ## Timeline
 
-2022-03-22 17:08:55
-
 :sparkles: [pr](https://github.com/erdengk/shenyu-helm-chart/commit/53f210ebe103a942a70c902dd68dadb0ea89343e) 实现了CI和自动发版
 
 :sparkles: [pr](https://github.com/erdengk/shenyu-helm-chart/tree/062d312ac23fc297e2881e045d03532a8897ae0b) 验证了发版流程
-1. 修改chart
-2. 生成.tgz 
-3. 生成index
-4. 提交到gh-pages
+
+vim /charts/shenyu/Chart.yaml
+
+cd docs
+
+helm package ../charts/shenyu
+
+helm repo index  --merge index.yaml .
+
 
 :sparkles: [pr](https://github.com/erdengk/shenyu-helm-chart/commit/1e1609602eda91a72c899ad50c0ab863b0a5a895)
+
 实现了ci 与 发版
 但还没有验证是否能够识别出错误的chart
 
 
+:sparkles: [pr](https://github.com/erdengk/shenyu-helm-chart/commit/099493e70f877e6e994adaa4537ddb44f63b453f)
+验证了ci的正确性，可以识别出错误的chart
 

@@ -1,4 +1,4 @@
-# shenyu-helm-chart
+# Shenyu-helm-chart
 Helm deployment documentation written for Apache/Shenyu
 
 # Artifact Hub
