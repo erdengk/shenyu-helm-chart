@@ -27,7 +27,43 @@ have fun～
 
 ## Timeline
 
-:sparkles: [pr](https://github.com/erdengk/shenyu-helm-chart/commit/53f210ebe103a942a70c902dd68dadb0ea89343e) 实现了CI和自动发版
 
-:sparkles: [pr](https://github.com/erdengk/shenyu-helm-chart/tree/062d312ac23fc297e2881e045d03532a8897ae0b) 验证了发版流程
+### Validated release process
+
+:sparkles: [pr](https://github.com/erdengk/shenyu-helm-chart/tree/062d312ac23fc297e2881e045d03532a8897ae0b) 
+
+```bash
+vim /charts/shenyu/Chart.yaml
+
+cd docs
+
+helm package ../charts/shenyu
+
+helm repo index  --merge index.yaml .
+
+git push
+
+merge into main
+```
+
+### Implemented CI and release
+
+But it has not been verified whether the wrong chart can be identified
+
+:sparkles: [pr](https://github.com/erdengk/shenyu-helm-chart/tree/1e1609602eda91a72c899ad50c0ab863b0a5a895)
+
+
+### The correctness of ci is verified 
+
+**The wrong chart can be identified**
+
+:sparkles: [pr](https://github.com/erdengk/shenyu-helm-chart/commit/099493e70f877e6e994adaa4537ddb44f63b453f)
+
+### V2.4.25
+
+🎉🎉🎉
+
+Implemented automatic deployment
+
+Implemented CI validation
 
