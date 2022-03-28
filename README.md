@@ -32,19 +32,19 @@ have fun～
 
 :sparkles: [pr](https://github.com/erdengk/shenyu-helm-chart/tree/062d312ac23fc297e2881e045d03532a8897ae0b) 
 
-```bash
-vim /charts/shenyu/Chart.yaml
 
-cd docs
+~~vim /charts/shenyu/Chart.yaml~~
 
-helm package ../charts/shenyu
+~~cd docs~~
 
-helm repo index  --merge index.yaml .
+~~helm package ../charts/shenyu~~
 
-git push
+~~helm repo index  --merge index.yaml .~~
 
-merge into main
-```
+~~git push~~
+
+~~merge into main~~
+
 
 ### Implemented CI and release
 
@@ -63,7 +63,16 @@ But it has not been verified whether the wrong chart can be identified
 
 🎉🎉🎉
 
-Implemented automatic deployment
+~~Implemented automatic deployment~~
 
 Implemented CI validation
+
+### V2.4.27
+
+🎉🎉🎉
+
+Implemented automatic deployment
+
+
+
 
