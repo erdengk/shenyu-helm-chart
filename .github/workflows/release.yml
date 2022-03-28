@@ -14,9 +14,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Run CI
-        uses: ./.github/workflows/ci.yaml
-
       - name: Configure Git
         run: |
           git config user.name "$GITHUB_ACTOR"
