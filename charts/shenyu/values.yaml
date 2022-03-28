@@ -11,6 +11,3 @@ bootstrap:
   enabled: true
   image: apache/shenyu-bootstrap
   tag: 2.4.2
-
-nextimg:
-  tag:2.4.3
