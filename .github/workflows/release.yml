@@ -3,8 +3,7 @@ name: Release Charts
 on:
   push:
     branches:
-      - main
-      - gh-pages
+      - "**-release"
 
 jobs:
   release:
