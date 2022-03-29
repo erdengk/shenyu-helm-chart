@@ -74,5 +74,10 @@ Implemented CI validation
 Implemented automatic deployment
 
 
+### About release
 
-
+1. vim charts/Chart.yaml .....
+2. git check -b 2.4.3-release
+3. git push origin 2.4.3-release
+4. trigger release workflow 
+5. git push --delete origin 2.4.3-release 
