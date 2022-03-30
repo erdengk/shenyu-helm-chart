@@ -19,7 +19,7 @@ add repo
 
 install:
 
-> helm install my-shenyu shenyu-test/shenyu --version 0.1.0
+> helm install my-shenyu shenyu-test/shenyu --version 2.4.2
 
 
 
