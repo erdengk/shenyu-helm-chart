@@ -1,11 +1,6 @@
 # shenyu-helm-chart
 Helm deployment documentation written for Apache/Shenyu
 
-# Artifact Hub
-
-[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/shenyu-test)](https://artifacthub.io/packages/search?repo=shenyu-test)
-
-
 ## Usage
 
 [Helm](https://helm.sh) must be installed to use the charts.  Please refer to
@@ -22,8 +17,15 @@ install:
 > helm install my-shenyu shenyu-test/shenyu --version 2.4.2
 
 
-
 have fun～
+
+### About release
+
+1. vim charts/Chart.yaml .....
+2. git checkout -b 2.4.3-release
+3. git push origin 2.4.3-release
+4. trigger release workflow 
+5. git push --delete origin 2.4.3-release 
 
 ## Timeline
 
@@ -74,10 +76,4 @@ Implemented CI validation
 Implemented automatic deployment
 
 
-### About release
 
-1. vim charts/Chart.yaml .....
-2. git checkout -b 2.4.3-release
-3. git push origin 2.4.3-release
-4. trigger release workflow 
-5. git push --delete origin 2.4.3-release 
