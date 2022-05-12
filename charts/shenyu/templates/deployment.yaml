@@ -21,8 +21,10 @@ spec:
       containers:
       - name: shenyu-admin
         image: {{ .Values.admin.image }}:{{ default "2.4.3" .Values.admin.tag }}
+        imagePullPolicy: "Always"
         resources: {}
       - name: shenyu-bootstrap
         image: {{ .Values.bootstrap.image }}:{{ default "2.4.3" .Values.bootstrap.tag }}
         resources: { }
+        imagePullPolicy: "Always"
 status: {}
