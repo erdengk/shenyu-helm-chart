@@ -6,7 +6,7 @@ on:
 jobs:
 
   helm:
-    name: Helm chart
+    name: K8s chart test
     runs-on: ubuntu-latest
     strategy:
       matrix:
