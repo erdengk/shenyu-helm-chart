@@ -1,79 +1,77 @@
-# shenyu-helm-chart
-Helm deployment documentation written for Apache/Shenyu
+# Apache ShenYu Helm Chart
 
-## Usage
+Apache ShenYu (Incubating) is a High-performance,multi-protocol,extensible,responsive API Gateway.
+
+This chart bootstraps all the components needed to run Apache ShenYu on a Kubernetes Cluster using Helm.
+
+## Prerequisites
+
+- Kubernetes 1.16+
+- Helm v3.0+
+
+## Install
 
 [Helm](https://helm.sh) must be installed to use the charts.  Please refer to
 Helm's [documentation](https://helm.sh/docs) to get started.
 
-Once Helm has been set up correctly, add the repo as follows:
 
-add repo
+### Add repo
+
 
 > helm repo add shenyu https://erdengk.github.io/shenyu-helm-chart
+> 
+> helm repo update
 
-install:
+### Install ShenYu
 
-> helm install my-shenyu shenyu-test/shenyu --version 2.4.2
+It can be installed directly with the following command, it will install the latest version of ShenYu by default.
 
+> helm install my-shenyu shenyu-test/shenyu 
 
-have fun～
+### Uninstall the Chart
 
-### About release
+To uninstall/delete the my-release deployment,
 
-1. vim charts/Chart.yaml .....
-2. git checkout -b 2.4.3-release
-3. git push origin 2.4.3-release
-4. trigger release workflow 
-5. git push --delete origin 2.4.3-release 
+> helm delete my-shenyu
 
-## Timeline
+The command removes all the Kubernetes components associated with the chart and deletes the release.
 
+## Configuration
 
-### Validated release process
+Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
-:sparkles: [pr](https://github.com/erdengk/shenyu-helm-chart/tree/062d312ac23fc297e2881e045d03532a8897ae0b) 
+> helm install my-shenyu \
+--set replicas=3 \
+shenyu-test/shenyu
 
+The above command deploys ShenYu with 3 brokers (replicas).
 
-~~vim /charts/shenyu/Chart.yaml~~
+You also can provide a YAML file specifying parameter values when installing the chart. For example,
 
-~~cd docs~~
+> helm install my-shenyu -f values.yaml shenyu-test/shenyu
 
-~~helm package ../charts/shenyu~~
+### Option
 
-~~helm repo index  --merge index.yaml .~~
+The following table lists the configurable parameters of the Skywalking chart and their default values.
 
-~~git push~~
-
-~~merge into main~~
-
-
-### Implemented CI and release
-
-But it has not been verified whether the wrong chart can be identified
-
-:sparkles: [pr](https://github.com/erdengk/shenyu-helm-chart/tree/1e1609602eda91a72c899ad50c0ab863b0a5a895)
+| **Parameter**     | Description | Default |
+| ----------------- | ----------- | ------- |
+| admin.tag         |             | 2.4.3   |
+| admin.enabled     |             | true    |
+| bootstrap.tag     |             | 2.4.3   |
+| bootstrap.enabled |             | True    |
+| replicas          |             | 1       |
 
 
-### The correctness of ci is verified 
 
-**The wrong chart can be identified**
 
-:sparkles: [pr](https://github.com/erdengk/shenyu-helm-chart/commit/099493e70f877e6e994adaa4537ddb44f63b453f)
+## License
 
-### V2.4.25
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
-🎉🎉🎉
+> http://www.apache.org/licenses/LICENSE-2.0
 
-~~Implemented automatic deployment~~
-
-Implemented CI validation
-
-### V2.4.27
-
-🎉🎉🎉
-
-Implemented automatic deployment
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
 
 

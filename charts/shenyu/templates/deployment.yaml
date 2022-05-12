@@ -20,9 +20,9 @@ spec:
     spec:
       containers:
       - name: shenyu-admin
-        image: {{ .Values.admin.image }}:{{ default "2.4.2" .Values.admin.tag }}
+        image: {{ .Values.admin.image }}:{{ default "2.4.3" .Values.admin.tag }}
         resources: {}
       - name: shenyu-bootstrap
-        image: {{ .Values.bootstrap.image }}:{{ default "2.4.2" .Values.bootstrap.tag }}
+        image: {{ .Values.bootstrap.image }}:{{ default "2.4.3" .Values.bootstrap.tag }}
         resources: { }
 status: {}
