@@ -5,7 +5,7 @@ version: 2.4.29
 admin:
   enabled: true
   image: apache/shenyu-admin
-  tag: 2.4.2
+  tag: 2.4.3
 
 bootstrap:
   enabled: true
