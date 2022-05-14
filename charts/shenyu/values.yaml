@@ -9,5 +9,5 @@ admin:
 
 bootstrap:
   enabled: true
-  image: apache/shenyu-bootstrap
+  image: lewiseliu/shenyu-bootstrap
   tag: 2.4.3
