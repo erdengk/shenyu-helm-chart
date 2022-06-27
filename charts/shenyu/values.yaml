@@ -1,7 +1,7 @@
 replicas: 1
 
 label: shenyu
-version: 2.4.29
+version: 2.4.2
 admin:
   enabled: true
   image: apache/shenyu-admin
